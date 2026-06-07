@@ -61,7 +61,6 @@ function scrape_recipe_from_url(string $url): array
         throw new RuntimeException('Nie udało się rozpoznać tytułu przepisu.');
     }
 
-    // Składniki i przygotowanie mogą nie zawsze zaczytać się idealnie, dlatego formularz pozwala je poprawić.
     return $data;
 }
 
@@ -283,7 +282,7 @@ function scraper_site_fallback(string $host, DOMXPath $xpath): array
     $ingredients = '';
     $instructions = '';
 
-    // Dla poprostupycha.com.pl
+    // poprostupycha.com.pl
     if (str_contains($host, 'poprostupycha.com.pl')) {
         $nodes = $xpath->query('//*[@itemprop="recipeIngredient"]');
         $ingredients = scraper_nodes_to_lines($nodes, '- ');
@@ -310,7 +309,6 @@ function scraper_site_fallback(string $host, DOMXPath $xpath): array
         return ['ingredients' => $ingredients, 'instructions' => $instructions];
     }
 
-    // Typowe klasy wtyczek kulinarnych i struktur z obsługiwanych blogów.
     $ingredientQueries = [
         '//*[contains(@class,"wprm-recipe-ingredient")]//li | //*[contains(@class,"wprm-recipe-ingredient")]',
         '//*[contains(@class,"recipe-ingredients")]//li | //*[contains(@class,"ingredients")]//li',

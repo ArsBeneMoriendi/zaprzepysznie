@@ -45,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $body_class = 'auth-page';
 require_once __DIR__ . '/includes/header.php';
+
+
 ?>
 <section class="auth-card">
     <h1>Rejestracja</h1>
@@ -73,4 +75,5 @@ require_once __DIR__ . '/includes/header.php';
 
     <p>Masz już konto? <a href="logowanie">Zaloguj się</a>
 </section>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

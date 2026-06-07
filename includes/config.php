@@ -1,13 +1,13 @@
 <?php
-// Główna konfiguracja aplikacji
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
 const APP_NAME = 'Zaprzepysznie';
 const APP_SLOGAN = 'Zapisz. Przepis. Pysznie.';
+const APP_BASE = '/zaprzepysznie';
 
-// Zmień dane, jeśli w XAMPP masz inne ustawienia MySQL.
 const DB_HOST = 'localhost';
 const DB_NAME = 'zaprzepysznie';
 const DB_USER = 'root';
@@ -26,10 +26,8 @@ const CATEGORIES = [
     'szybkie'
 ];
 
-// Strony obsługiwane przez scraper.
+// Strony obsługiwane przez scraper
 const ALLOWED_SCRAPER_DOMAINS = [
-    'aniagotuje.pl',
-    'www.aniagotuje.pl',
     'kwestiasmaku.com',
     'www.kwestiasmaku.com',
     'poprostupycha.com.pl',

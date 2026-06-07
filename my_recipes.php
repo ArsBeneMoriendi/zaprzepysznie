@@ -32,6 +32,7 @@ $stmt->execute($params);
 $recipes = $stmt->fetchAll();
 
 require_once __DIR__ . '/includes/header.php';
+
 ?>
 <div class="page-title-row">
     <div>
@@ -68,10 +69,12 @@ require_once __DIR__ . '/includes/header.php';
 </section>
 
 <?php if (!$recipes): ?>
+
     <section class="empty-state">
         <h2>Brak przepisów</h2>
         <p>Dodaj pierwszy przepis ręcznie albo z linku.</p>
     </section>
+
 <?php else: ?>
     <section class="recipe-grid">
         <?php foreach ($recipes as $recipe): ?>
@@ -96,5 +99,9 @@ require_once __DIR__ . '/includes/header.php';
             </article>
         <?php endforeach; ?>
     </section>
+
 <?php endif; ?>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
+
+

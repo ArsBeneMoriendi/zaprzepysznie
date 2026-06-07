@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/auth.php';
 ?>
+
 <!doctype html>
 <html lang="pl">
 <head>
@@ -9,6 +10,7 @@ require_once __DIR__ . '/auth.php';
     <title><?= e(APP_NAME) ?></title>
     <link rel="icon" type="image/png" href="/zaprzepysznie/assets/img/favicon.png?v=1">
     <link rel="shortcut icon" type="image/png" href="/zaprzepysznie/assets/img/favicon.png?v=1">
+    <base href="/zaprzepysznie/">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="<?= $body_class ?? '' ?>">
@@ -38,3 +40,4 @@ require_once __DIR__ . '/auth.php';
 
 <main class="container">
     <?php show_flash(); ?>
+    

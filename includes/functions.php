@@ -8,7 +8,14 @@ function e(?string $value): string
 
 function redirect(string $path): never
 {
-    header('Location: ' . $path);
+    if (preg_match('{^(?:https?://|/)}i', $path)) {
+        header('Location: ' . $path);
+        exit;
+    }
+
+    $base = defined('APP_BASE') ? APP_BASE : '';
+    $location = rtrim($base, '/') . '/' . ltrim($path, '/');
+    header('Location: ' . $location);
     exit;
 }
 

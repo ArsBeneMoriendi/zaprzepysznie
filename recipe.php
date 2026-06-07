@@ -21,6 +21,7 @@ if (!$recipe) {
 
 require_once __DIR__ . '/includes/header.php';
 ?>
+
 <article class="card recipe-detail">
     <div class="page-title-row">
         <div>
@@ -57,4 +58,5 @@ require_once __DIR__ . '/includes/header.php';
         <pre><?= e($recipe['instructions']) ?></pre>
     </section>
 </article>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

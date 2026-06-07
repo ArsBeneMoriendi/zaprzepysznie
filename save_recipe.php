@@ -96,6 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 require_once __DIR__ . '/includes/header.php';
+
 ?>
 <h1>Zapisz przepis</h1>
 <p class="muted">Dodaj przepis ręcznie albo pobierz dane z jednej z obsługiwanych stron.</p>
@@ -176,4 +177,5 @@ require_once __DIR__ . '/includes/header.php';
         <button class="btn" type="submit">Zapisz przepis</button>
     </form>
 </section>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

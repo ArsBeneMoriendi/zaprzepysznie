@@ -82,6 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 require_once __DIR__ . '/includes/header.php';
+
 ?>
 <h1>Edytuj przepis</h1>
 
@@ -125,6 +126,7 @@ require_once __DIR__ . '/includes/header.php';
                     Usuń aktualne zdjęcie
                 </label>
             </div>
+
         <?php endif; ?>
 
         <label>
@@ -144,4 +146,5 @@ require_once __DIR__ . '/includes/header.php';
         </div>
     </form>
 </section>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
