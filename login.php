@@ -56,3 +56,4 @@ require_once __DIR__ . '/includes/header.php';
     <p>Nie masz konta? <a href="rejestracja">Zarejestruj się</a>
 </section>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
+

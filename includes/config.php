@@ -26,7 +26,7 @@ const CATEGORIES = [
     'szybkie'
 ];
 
-// Strony obsługiwane przez scraper
+// obsługiwane strony
 const ALLOWED_SCRAPER_DOMAINS = [
     'kwestiasmaku.com',
     'www.kwestiasmaku.com',

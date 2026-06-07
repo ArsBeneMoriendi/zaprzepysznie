@@ -43,4 +43,7 @@ require_once __DIR__ . '/includes/header.php';
         <a class="btn ghost" href="przepis/<?= (int) $id ?>">Anuluj</a>
     </form>
 </section>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>
+
+

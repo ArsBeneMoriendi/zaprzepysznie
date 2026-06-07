@@ -29,6 +29,8 @@ $stmt->execute($recipeParams);
 $recipes = $stmt->fetchAll();
 
 require_once __DIR__ . '/includes/header.php';
+
+
 ?>
 <h1>Panel administratora</h1>
 <p class="muted">Administrator widzi wszystkich użytkowników i wszystkie przepisy. Może usuwać przepisy i konta użytkowników.</p>
@@ -120,4 +122,5 @@ require_once __DIR__ . '/includes/header.php';
         </table>
     </div>
 </section>
+
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

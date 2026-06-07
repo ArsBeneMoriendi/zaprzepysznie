@@ -32,6 +32,19 @@ a:hover {
     text-decoration: underline;
 }
 
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background: #fff2e4;
+}
+
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -101,7 +114,9 @@ a:hover {
     text-align: center;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.2;
     margin-top: 0;
 }
@@ -365,24 +380,13 @@ table {
     border-collapse: collapse;
 }
 
-th,
-td {
-    padding: 12px;
-    border-bottom: 1px solid var(--border);
-    text-align: left;
-    vertical-align: middle;
-}
-
-th {
-    background: #fff2e4;
-}
-
 .confirm-card {
     max-width: 680px;
     margin-inline: auto;
 }
 
 @media (max-width: 900px) {
+
     .two-columns,
     .recipe-grid {
         grid-template-columns: 1fr 1fr;
@@ -395,6 +399,7 @@ th {
 }
 
 @media (max-width: 650px) {
+
     .site-header,
     .page-title-row {
         flex-direction: column;
