@@ -16,7 +16,7 @@ $recipe = $stmt->fetch();
 
 if (!$recipe) {
     flash('error', 'Nie znaleziono przepisu albo nie masz do niego dostępu.');
-    redirect('my_recipes.php');
+    redirect('przepisy');
 }
 
 $errors = [];
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ]);
 
             flash('success', 'Przepis został zaktualizowany.');
-            redirect('recipe.php?id=' . $id);
+            redirect('przepis/' . $id);
         } catch (Throwable $e) {
             $errors[] = $e->getMessage();
         }
@@ -140,7 +140,7 @@ require_once __DIR__ . '/includes/header.php';
 
         <div class="actions">
             <button class="btn" type="submit">Zapisz zmiany</button>
-            <a class="btn ghost" href="recipe.php?id=<?= (int) $id ?>">Anuluj</a>
+            <a class="btn ghost" href="przepis/<?= (int) $id ?>">Anuluj</a>
         </div>
     </form>
 </section>

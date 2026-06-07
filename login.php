@@ -2,7 +2,7 @@
 require_once __DIR__ . '/includes/auth.php';
 
 if (is_logged_in()) {
-    redirect('save_recipe.php');
+    redirect('zapisz-przepis');
 }
 
 $errors = [];
@@ -22,13 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password_hash'])) {
             login_user($user);
-            redirect('save_recipe.php');
+            redirect('zapisz-przepis');
         }
 
         $errors[] = 'Nieprawidłowy login lub hasło.';
     }
 }
 
+$body_class = 'auth-page';
 require_once __DIR__ . '/includes/header.php';
 ?>
 <section class="auth-card">
@@ -52,6 +53,6 @@ require_once __DIR__ . '/includes/header.php';
         <button class="btn" type="submit">Zaloguj</button>
     </form>
 
-    <p>Nie masz konta? <a href="register.php">Zarejestruj się</a>.</p>
+    <p>Nie masz konta? <a href="rejestracja">Zarejestruj się</a>
 </section>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

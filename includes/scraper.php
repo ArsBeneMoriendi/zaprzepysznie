@@ -283,6 +283,33 @@ function scraper_site_fallback(string $host, DOMXPath $xpath): array
     $ingredients = '';
     $instructions = '';
 
+    // Dla poprostupycha.com.pl
+    if (str_contains($host, 'poprostupycha.com.pl')) {
+        $nodes = $xpath->query('//*[@itemprop="recipeIngredient"]');
+        $ingredients = scraper_nodes_to_lines($nodes, '- ');
+
+        $stepNodes = $xpath->query('//*[contains(@class,"steps-columns") and contains(@class,"last")][@itemprop="text"]');
+        $lines = [];
+        $step = 1;
+        foreach ($stepNodes as $stepNode) {
+            $paragraphs = $xpath->query('.//p', $stepNode);
+            $parts = [];
+            foreach ($paragraphs as $p) {
+                $text = trim(preg_replace('/\s+/', ' ', $p->textContent));
+                if ($text !== '' && mb_strlen($text) >= 3) {
+                    $parts[] = $text;
+                }
+            }
+            $combined = implode(' ', $parts);
+            if ($combined !== '') {
+                $lines[] = ($step++) . '. ' . $combined;
+            }
+        }
+        $instructions = implode("\n", $lines);
+
+        return ['ingredients' => $ingredients, 'instructions' => $instructions];
+    }
+
     // Typowe klasy wtyczek kulinarnych i struktur z obsługiwanych blogów.
     $ingredientQueries = [
         '//*[contains(@class,"wprm-recipe-ingredient")]//li | //*[contains(@class,"wprm-recipe-ingredient")]',

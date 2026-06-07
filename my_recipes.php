@@ -38,7 +38,7 @@ require_once __DIR__ . '/includes/header.php';
         <h1>Moje przepisy</h1>
         <p class="muted">Wyszukuj, filtruj, sortuj, edytuj i usuwaj swoje przepisy.</p>
     </div>
-    <a class="btn" href="save_recipe.php">Dodaj przepis</a>
+    <a class="btn" href="zapisz-przepis">Dodaj przepis</a>
 </div>
 
 <section class="card">
@@ -63,7 +63,7 @@ require_once __DIR__ . '/includes/header.php';
             </select>
         </label>
         <button class="btn secondary" type="submit">Zastosuj</button>
-        <a class="btn ghost" href="my_recipes.php">Wyczyść</a>
+        <a class="btn ghost" href="przepisy">Wyczyść</a>
     </form>
 </section>
 
@@ -88,9 +88,9 @@ require_once __DIR__ . '/includes/header.php';
                     <p><?= e(excerpt($recipe['ingredients'])) ?></p>
                     <small>Dodano: <?= e(date('d.m.Y H:i', strtotime($recipe['created_at']))) ?></small>
                     <div class="actions">
-                        <a class="btn small" href="recipe.php?id=<?= (int) $recipe['id'] ?>">Zobacz</a>
-                        <a class="btn small secondary" href="edit_recipe.php?id=<?= (int) $recipe['id'] ?>">Edytuj</a>
-                        <a class="btn small danger" href="delete_recipe.php?id=<?= (int) $recipe['id'] ?>">Usuń</a>
+                        <a class="btn small" href="przepis/<?= (int) $recipe['id'] ?>">Zobacz</a>
+                        <a class="btn small secondary" href="edytuj/<?= (int) $recipe['id'] ?>">Edytuj</a>
+                        <a class="btn small danger" href="usun-przepis/<?= (int) $recipe['id'] ?>">Usuń</a>
                     </div>
                 </div>
             </article>

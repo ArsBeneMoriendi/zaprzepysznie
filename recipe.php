@@ -16,7 +16,7 @@ $recipe = $stmt->fetch();
 
 if (!$recipe) {
     flash('error', 'Nie znaleziono przepisu albo nie masz do niego dostępu.');
-    redirect('my_recipes.php');
+    redirect('przepisy');
 }
 
 require_once __DIR__ . '/includes/header.php';
@@ -34,8 +34,8 @@ require_once __DIR__ . '/includes/header.php';
             </p>
         </div>
         <div class="actions">
-            <a class="btn secondary" href="edit_recipe.php?id=<?= (int) $recipe['id'] ?>">Edytuj</a>
-            <a class="btn danger" href="delete_recipe.php?id=<?= (int) $recipe['id'] ?>">Usuń</a>
+            <a class="btn secondary" href="edytuj/<?= (int) $recipe['id'] ?>">Edytuj</a>
+            <a class="btn danger" href="usun-przepis/<?= (int) $recipe['id'] ?>">Usuń</a>
         </div>
     </div>
 

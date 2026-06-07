@@ -41,7 +41,7 @@ require_once __DIR__ . '/includes/header.php';
             <input type="text" name="user_search" value="<?= e($userSearch) ?>">
         </label>
         <button class="btn secondary" type="submit">Szukaj</button>
-        <a class="btn ghost" href="admin.php">Wyczyść</a>
+        <a class="btn ghost" href="admin">Wyczyść</a>
     </form>
 
     <div class="table-wrap">
@@ -68,7 +68,7 @@ require_once __DIR__ . '/includes/header.php';
                         <?php if ((int) $user['id'] === current_user()['id']): ?>
                             <span class="muted">To Ty</span>
                         <?php else: ?>
-                            <a class="btn small danger" href="admin_delete_user.php?id=<?= (int) $user['id'] ?>">Usuń</a>
+                            <a class="btn small danger" href="usun-uzytkownika/<?= (int) $user['id'] ?>">Usuń</a>
                         <?php endif; ?>
                     </td>
                 </tr>
@@ -86,7 +86,7 @@ require_once __DIR__ . '/includes/header.php';
             <input type="text" name="recipe_search" value="<?= e($recipeSearch) ?>">
         </label>
         <button class="btn secondary" type="submit">Szukaj</button>
-        <a class="btn ghost" href="admin.php">Wyczyść</a>
+        <a class="btn ghost" href="admin">Wyczyść</a>
     </form>
 
     <div class="table-wrap">
@@ -110,9 +110,9 @@ require_once __DIR__ . '/includes/header.php';
                     <td><?= e($recipe['username']) ?></td>
                     <td><?= e(date('d.m.Y H:i', strtotime($recipe['created_at']))) ?></td>
                     <td class="actions inline">
-                        <a class="btn small" href="recipe.php?id=<?= (int) $recipe['id'] ?>">Zobacz</a>
-                        <a class="btn small secondary" href="edit_recipe.php?id=<?= (int) $recipe['id'] ?>">Edytuj</a>
-                        <a class="btn small danger" href="delete_recipe.php?id=<?= (int) $recipe['id'] ?>">Usuń</a>
+                        <a class="btn small" href="przepis/<?= (int) $recipe['id'] ?>">Zobacz</a>
+                        <a class="btn small secondary" href="edytuj/<?= (int) $recipe['id'] ?>">Edytuj</a>
+                        <a class="btn small danger" href="usun-przepis/<?= (int) $recipe['id'] ?>">Usuń</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

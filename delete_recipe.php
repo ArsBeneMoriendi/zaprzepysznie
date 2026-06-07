@@ -16,7 +16,7 @@ $recipe = $stmt->fetch();
 
 if (!$recipe) {
     flash('error', 'Nie znaleziono przepisu albo nie masz do niego dostępu.');
-    redirect('my_recipes.php');
+    redirect('przepisy');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([$id]);
 
     flash('success', 'Przepis został usunięty.');
-    redirect(is_admin() ? 'admin.php' : 'my_recipes.php');
+    redirect(is_admin() ? 'admin' : 'przepisy');
 }
 
 require_once __DIR__ . '/includes/header.php';
@@ -40,7 +40,7 @@ require_once __DIR__ . '/includes/header.php';
         <?= csrf_field() ?>
         <input type="hidden" name="id" value="<?= (int) $id ?>">
         <button class="btn danger" type="submit">Tak, usuń</button>
-        <a class="btn ghost" href="recipe.php?id=<?= (int) $id ?>">Anuluj</a>
+        <a class="btn ghost" href="przepis/<?= (int) $id ?>">Anuluj</a>
     </form>
 </section>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

@@ -11,9 +11,9 @@ require_once __DIR__ . '/auth.php';
     <link rel="shortcut icon" type="image/png" href="/zaprzepysznie/assets/img/favicon.png?v=1">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="<?= $body_class ?? '' ?>">
 <header class="site-header">
-    <a class="brand" href="<?= is_logged_in() ? 'save_recipe.php' : 'login.php' ?>">
+    <a class="brand" href="<?= is_logged_in() ? 'zapisz-przepis' : 'logowanie' ?>">
         <img src="assets/img/logo.png" alt="Logo" onerror="this.style.display='none'">
         <span>
             <strong><?= e(APP_NAME) ?></strong>
@@ -23,15 +23,15 @@ require_once __DIR__ . '/auth.php';
 
     <nav class="main-nav">
         <?php if (is_logged_in()): ?>
-            <a href="save_recipe.php">Zapisz przepis</a>
-            <a href="my_recipes.php">Moje przepisy</a>
+            <a href="zapisz-przepis">Zapisz przepis</a>
+            <a href="przepisy">Moje przepisy</a>
             <?php if (is_admin()): ?>
-                <a href="admin.php">Admin</a>
+                <a href="admin">Admin</a>
             <?php endif; ?>
-            <a href="logout.php">Wyloguj</a>
+            <a href="wyloguj">Wyloguj</a>
         <?php else: ?>
-            <a href="login.php">Logowanie</a>
-            <a href="register.php">Rejestracja</a>
+            <a href="logowanie">Logowanie</a>
+            <a href="rejestracja">Rejestracja</a>
         <?php endif; ?>
     </nav>
 </header>

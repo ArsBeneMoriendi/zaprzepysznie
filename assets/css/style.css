@@ -177,7 +177,7 @@ textarea {
     justify-content: center;
     align-items: center;
     gap: 8px;
-    border: 0;
+    border: 1px solid transparent;
     border-radius: 999px;
     background: var(--primary);
     color: white;
@@ -185,6 +185,9 @@ textarea {
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
+    font-size: 1rem;
+    line-height: 1.25;
+    box-sizing: border-box;
 }
 
 .btn:hover {
@@ -423,4 +426,12 @@ th {
     .empty-state {
         padding: 18px;
     }
+}
+
+body.auth-page {
+    background-image: url('/zaprzepysznie/assets/img/background_login.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
 }

@@ -21,17 +21,16 @@ function require_login(): void
 {
     if (!is_logged_in()) {
         flash('error', 'Musisz się zalogować.');
-        redirect('login.php');
+        redirect('logowanie');
     }
 }
 
 function require_admin(): void
 {
     require_login();
-
     if (!is_admin()) {
         flash('error', 'Brak dostępu do panelu administratora.');
-        redirect('save_recipe.php');
+        redirect('zapisz-przepis');
     }
 }
 

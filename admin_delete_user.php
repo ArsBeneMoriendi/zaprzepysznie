@@ -6,7 +6,7 @@ $id = (int) ($_GET['id'] ?? $_POST['id'] ?? 0);
 
 if ($id === current_user()['id']) {
     flash('error', 'Nie możesz usunąć własnego konta administratora.');
-    redirect('admin.php');
+    redirect('admin');
 }
 
 $stmt = $pdo->prepare('SELECT * FROM users WHERE id = ?');
@@ -15,7 +15,7 @@ $user = $stmt->fetch();
 
 if (!$user) {
     flash('error', 'Nie znaleziono użytkownika.');
-    redirect('admin.php');
+    redirect('admin');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -44,7 +44,7 @@ require_once __DIR__ . '/includes/header.php';
         <?= csrf_field() ?>
         <input type="hidden" name="id" value="<?= (int) $id ?>">
         <button class="btn danger" type="submit">Tak, usuń użytkownika</button>
-        <a class="btn ghost" href="admin.php">Anuluj</a>
+        <a class="btn ghost" href="admin">Anuluj</a>
     </form>
 </section>
 <?php require_once __DIR__ . '/includes/footer.php'; ?>

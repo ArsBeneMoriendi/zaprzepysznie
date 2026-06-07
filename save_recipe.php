@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ]);
 
                 flash('success', 'Przepis został zapisany.');
-                redirect('my_recipes.php');
+                redirect('przepisy');
             } catch (Throwable $e) {
                 $errors[] = $e->getMessage();
             }
@@ -103,7 +103,7 @@ require_once __DIR__ . '/includes/header.php';
 <section class="grid two-columns">
     <div class="card">
         <h2>Dodaj z linku</h2>
-        <p>Obsługiwane strony: aniagotuje.pl, kwestiasmaku.com, poprostupycha.com.pl.</p>
+        <p>Obsługiwane strony: kwestiasmaku.com, poprostupycha.com.pl.</p>
         <form method="post" class="form">
             <?= csrf_field() ?>
             <input type="hidden" name="mode" value="scrape">

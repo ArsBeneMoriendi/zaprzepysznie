@@ -36,6 +36,3 @@ CREATE TABLE recipes (
 -- Domyślne konto administratora:
 -- login: admin
 -- hasło: admin123
--- Po uruchomieniu projektu zmień hasło albo utwórz własnego administratora.
-INSERT INTO users (username, password_hash, is_admin)
-VALUES ('admin', '$2y$12$usYW5clDDLwdmryaR97qEucVHVB0CwTs23WssZgqbAfTTeFg9WA.e', 1);

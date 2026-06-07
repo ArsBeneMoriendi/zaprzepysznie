@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /zaprzepysznie/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^przepis/([0-9]+)$        recipe.php?id=$1            [L,QSA]
+RewriteRule ^edytuj/([0-9]+)$         edit_recipe.php?id=$1       [L,QSA]
+RewriteRule ^usun-przepis/([0-9]+)$   delete_recipe.php?id=$1     [L,QSA]
+RewriteRule ^usun-uzytkownika/([0-9]+)$ admin_delete_user.php?id=$1 [L,QSA]
+RewriteRule ^przepisy$                my_recipes.php              [L,QSA]
+RewriteRule ^zapisz-przepis$          save_recipe.php             [L,QSA]
+RewriteRule ^logowanie$               login.php                   [L,QSA]
+RewriteRule ^wyloguj$                 logout.php                  [L,QSA]
+RewriteRule ^rejestracja$             register.php                [L,QSA]
+RewriteRule ^admin$                   admin.php                   [L,QSA]
